@@ -33,7 +33,10 @@ button:disabled { cursor: not-allowed; opacity: .55; }
 .icon-button { position: relative; height: 38px; width: 38px; border: 1px solid #2B2B35; background: #141419; color: #A1A1AA; }
 .icon-button:hover { border-color: #555560; color: #fff; }
 .notification-dot { position: absolute; right: 8px; top: 8px; height: 5px; width: 5px; border-radius: 99px; background: #F97A00; }
-.mobile-topbar { height: 60px; align-items: center; justify-content: space-between; border-bottom: 1px solid #2B2B35; padding: 0 16px; }
+.mobile-topbar { position: sticky; top: 0; z-index: 40; display: flex; height: 60px; align-items: center; justify-content: space-between; border-bottom: 1px solid #2B2B35; background: #0B0B0Fee; padding: 0 16px; backdrop-filter: blur(16px); }
+.mobile-menu-backdrop { position: fixed; inset: 0; z-index: 45; background: #0009; }
+.mobile-drawer { position: fixed; inset: 0 auto 0 0; z-index: 50; width: min(310px, 86vw); overflow-y: auto; border-right: 1px solid #2B2B35; background: #0F0F14; padding: 16px 14px; box-shadow: 20px 0 50px #0008; animation: drawerIn .2s ease both; }
+@keyframes drawerIn { from { opacity: 0; transform: translateX(-18px); } to { opacity: 1; transform: translateX(0); } }
 .mobile-bottomnav { position: fixed; inset: auto 0 0; z-index: 30; height: calc(62px + env(safe-area-inset-bottom)); justify-content: space-around; border-top: 1px solid #2B2B35; background: #101015f2; padding-bottom: env(safe-area-inset-bottom); backdrop-filter: blur(16px); }
 .mobile-bottomnav button { display: flex; min-width: 58px; flex-direction: column; align-items: center; justify-content: center; gap: 4px; color: #71717A; font-size: 10px; }
 .mobile-bottomnav button.active { color: #F97A00; }
