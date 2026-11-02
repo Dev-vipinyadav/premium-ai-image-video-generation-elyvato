@@ -1,9 +1,10 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+import './auth.css'
 
 export const metadata: Metadata = {
-  title: 'Lumina — AI creative workspace',
+  title: 'Trivi.ai — AI creative workspace',
   description: 'A premium workspace for creating cinematic AI images and videos.',
   generator: 'v0.app',
   icons: {
@@ -40,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
